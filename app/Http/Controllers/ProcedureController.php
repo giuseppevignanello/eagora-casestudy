@@ -57,7 +57,12 @@ class ProcedureController extends Controller
      */
     public function update(UpdateProcedureRequest $request, Procedure $procedure)
     {
-        //
+        $procedure = Procedure::find($procedure->id);
+        $valData = $request->validated();
+        $valData['type_id'] = $request->input('type_id');
+
+        $procedure->update($valData);
+        return response()->json(['procedure' => $procedure, 'message' => 'Procedure Updated Successfully']);
     }
 
     /**

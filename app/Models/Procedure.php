@@ -9,6 +9,9 @@ class Procedure extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['status', 'employee_dni', 'type_id', 'created_at', 'updated_at'];
+
+
 
     //add connections
     public function type()
