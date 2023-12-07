@@ -13,8 +13,9 @@ class ProcedureController extends Controller
      */
     public function index()
     {
-        $procedures = Procedure::all();
-        return view('procedures.index', compact('procedures'));
+        return csrf_token();
+        // $procedures = Procedure::all();
+        // return view('procedures.index', compact('procedures'));
     }
 
     /**

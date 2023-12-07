@@ -21,5 +21,3 @@ Route::get('/', function () {
 
 
 Route::resource('procedures', ProcedureController::class);
-
-// Route::post('/procedures', [ProcedureController::class, 'store']);
