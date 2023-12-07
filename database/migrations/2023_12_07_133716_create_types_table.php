@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('procedures', function (Blueprint $table) {
+        Schema::create('procedure_types', function (Blueprint $table) {
             $table->id();
-            $table->enum('status', ['pending', 'in_progress', 'done']); //this could be connected with another table actually
-            $table->string('employee_dni');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('procedures');
+        Schema::dropIfExists('procedure_types');
     }
 };

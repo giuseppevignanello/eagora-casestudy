@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('procedure_types', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('procedures', function (Blueprint $table) {
+            //
         });
     }
 
@@ -22,6 +21,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('procedure_types');
+        Schema::table('procedures', function (Blueprint $table) {
+            $table->unsignedBigInteger('type_id');
+            $table->foreign('type_id')->references('id')->on('types');
+        });
     }
 };
