@@ -14,7 +14,7 @@ class ProcedureController extends Controller
     public function index()
     {
         $procedures = Procedure::all();
-        return ('test');
+        return response()->json($procedures);
     }
 
     /**
