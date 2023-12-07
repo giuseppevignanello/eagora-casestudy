@@ -32,8 +32,8 @@ class ProcedureController extends Controller
     {
         $valData = $request->validated();
         $valData['type_id'] = $request->input('type_id');
-        $procedure = Procedure::create($valData);
-        return response()->json(['procedure' => $procedure, 'message' => 'Procedure Added Successfully']);
+        Procedure::create($valData);
+        return to_route('dashboard')->with('message', 'Procedure created successfully');
     }
 
     /**

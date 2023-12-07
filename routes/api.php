@@ -20,4 +20,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/procedures', [ProcedureController::class, 'index']);
-Route::post('/procedures', [ProcedureController::class, 'store']);
