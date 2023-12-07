@@ -30,7 +30,10 @@ class ProcedureController extends Controller
      */
     public function store(StoreProcedureRequest $request)
     {
-        //
+        $valData = $request->validated();
+        $valData['type_id'] = $request->input('type_id');
+        $procedure = Procedure::create($valData);
+        return response()->json(['procedure' => $procedure, 'message' => 'Procedure Added Successfully']);
     }
 
     /**

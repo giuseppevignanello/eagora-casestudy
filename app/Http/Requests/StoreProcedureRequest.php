@@ -11,7 +11,7 @@ class StoreProcedureRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreProcedureRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'type_id' => ['exists:types,id'],
+            'status' => 'required|in:pending,in_progress,done',
+            'employee_dni' => 'required'
         ];
     }
 }
