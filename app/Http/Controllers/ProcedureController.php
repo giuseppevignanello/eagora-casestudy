@@ -14,7 +14,7 @@ class ProcedureController extends Controller
     public function index()
     {
         $procedures = Procedure::all();
-        return response()->json($procedures);
+        return view('procedures.index', compact('procedures'));
     }
 
     /**
@@ -22,7 +22,7 @@ class ProcedureController extends Controller
      */
     public function create()
     {
-        //
+        return view('procedures.create');
     }
 
     /**
@@ -30,10 +30,12 @@ class ProcedureController extends Controller
      */
     public function store(StoreProcedureRequest $request)
     {
+        var_dump("test");
         $valData = $request->validated();
         $valData['type_id'] = $request->input('type_id');
         Procedure::create($valData);
-        return to_route('dashboard')->with('message', 'Procedure created successfully');
+        $procedures = Procedure::all();
+        return view('procedures.index', compact('procedures'))->with('message', 'Procedure added successfully');
     }
 
     /**
@@ -62,7 +64,7 @@ class ProcedureController extends Controller
         $valData['type_id'] = $request->input('type_id');
 
         $procedure->update($valData);
-        return response()->json(['procedure' => $procedure, 'message' => 'Procedure Updated Successfully']);
+        return view('procedures.index', compact('procedures'))->with('message', 'Procedure updated Successfully');
     }
 
     /**
