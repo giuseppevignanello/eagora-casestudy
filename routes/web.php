@@ -19,4 +19,4 @@ Route::get('/', function () {
 });
 
 
-Route::resource('procedures', ProcedureController::class);
+// Route::resource('procedures', ProcedureController::class);

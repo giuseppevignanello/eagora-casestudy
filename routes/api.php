@@ -19,4 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/procedures', 'ProcedureController@indexApi');
+Route::get('/procedures', [ProcedureController::class, 'index']);
+Route::post('/procedures', [ProcedureController::class, 'store']);
