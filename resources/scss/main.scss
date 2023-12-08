@@ -19,11 +19,25 @@
 
 .main_table .status {
     padding: 8px;
-    background: $active_light_color;
-    color: $active_dark_color;
+
     border-radius: $border_radius;
     margin: 8px 0;
     margin-right: 8px;
     font-weight: bold;
     width: 50%;
+}
+
+.pending {
+    background: $deleted_light_color;
+    color: $deleted_dark_color;
+}
+
+.done {
+    background: $active_light_color;
+    color: $active_dark_color;
+}
+
+.in-progress {
+    background: $scheduled_light_color;
+    color: $scheduled_dark_color;
 }

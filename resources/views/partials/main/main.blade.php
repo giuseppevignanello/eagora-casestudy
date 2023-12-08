@@ -28,7 +28,10 @@
                 </td>
                 <td>{{ $procedure->employee_dni }}</td>
                 <td>
-                    <p class="status">
+                    <p
+                        class="status @if ($procedure->status == 'pending') pending
+                                       @elseif($procedure->status == 'done') done
+                                       @elseif($procedure->status == 'in_progress') in-progress @endif">
                         <i class="fa-solid fa-circle-dot"></i> {{ $procedure->status }}
                     </p>
                 </td>
