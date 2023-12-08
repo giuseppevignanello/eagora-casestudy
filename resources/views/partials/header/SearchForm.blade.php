@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center justify-content-between search_form">
+<div class="d-flex row-cols-5 align-items-center justify-content-between search_form">
     <form id="search_form" class="d-flex flex-column">
         <label for="search_input">Buscar</label>
         <input type="text" id="search_input" name="search" placeholder="Buscar por titulo">
