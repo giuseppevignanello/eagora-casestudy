@@ -1,9 +1,11 @@
-.top_header {
-    padding: 30px 40px;
+// #region top_header
+
+header {
+    padding: 16px
 }
 
 .header_buttons button {
-    border-radius: 5px;
+    border-radius: $border_radius;
     padding: 8px 16px;
 }
 
@@ -18,3 +20,33 @@
     background-color: $main_color;
     color: $light_color;
 }
+
+.header_sub {
+    color: $text_muted_color;
+    margin-top: 16px;
+}
+
+// #endregion top_header
+
+// #region search_form
+
+.search_form input,
+.search_form select,
+#checkbox_form {
+    border: 1px solid $text_muted_color;
+    border-radius: $border_radius;
+    padding: 8px
+}
+
+.search_form label {
+    font-weight: bold;
+}
+
+#checkbox_form {
+    align-self: flex-end;
+    background-color: $bin_light_color;
+    border: none;
+    font-weight: 500;
+}
+
+// #endregion search_form
