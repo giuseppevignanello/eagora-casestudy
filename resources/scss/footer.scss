@@ -1,0 +1,11 @@
+footer {
+    margin: 12px;
+}
+
+.pagination_number {
+    border: 1px solid $text_muted_color;
+    border-radius: $border_radius;
+    width: 32px;
+    aspect-ratio: 1;
+    text-align: center;
+}

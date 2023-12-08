@@ -25,3 +25,22 @@ body {
     border-radius: $border_radius;
     height: 100vh;
 }
+
+.active {
+    background-color: $active_light_color;
+
+}
+
+.active_text {
+    color: $active_dark_color
+}
+
+.deleted {
+    background: $deleted_light_color;
+    color: $deleted_dark_color;
+}
+
+.scheduled {
+    background: $scheduled_light_color;
+    color: $scheduled_dark_color;
+}

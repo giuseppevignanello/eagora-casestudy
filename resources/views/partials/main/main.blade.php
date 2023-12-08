@@ -5,7 +5,7 @@
             <th>Tipo Publicacion</th>
             <th>DNI OPERADOR</th>
             <th>Estado</th>
-            <th>Creado</th>
+            <th class="active_text">Creado <i class="fa-solid fa-angle-down"></i></th>
             <th>Caducidad</th>
             <th>Acciones</th>
         </tr>
@@ -29,9 +29,9 @@
                 <td>{{ $procedure->employee_dni }}</td>
                 <td>
                     <p
-                        class="status @if ($procedure->status == 'pending') pending
-                                       @elseif($procedure->status == 'done') done
-                                       @elseif($procedure->status == 'in_progress') in-progress @endif">
+                        class="status @if ($procedure->status == 'pending') deleted
+                                       @elseif($procedure->status == 'done') active
+                                       @elseif($procedure->status == 'in_progress') scheduled @endif">
                         <i class="fa-solid fa-circle-dot"></i> {{ $procedure->status }}
                     </p>
                 </td>
