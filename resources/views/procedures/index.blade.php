@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('partials.header.header')
-    @include('partials.main.main')
+    <div class="wrapper">
+        @include('partials.header.header')
+        @include('partials.main.main')
+    </div>
 @endsection
