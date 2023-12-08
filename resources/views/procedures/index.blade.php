@@ -3,10 +3,7 @@
 
 
 @section('content')
-    <div class="container pt-3">
-
-        Test
-
-
+    <div>
+        <h1 class="test"> Prova</h1>
     </div>
 @endsection
