@@ -3,7 +3,7 @@
         <tr>
             <th>Titulo</th>
             <th>Tipo Publicacion</th>
-            <th>Reservas</th>
+            <th>DNI OPERADOR</th>
             <th>Estado</th>
             <th>Creado</th>
             <th>Caducidad</th>
@@ -11,35 +11,42 @@
         </tr>
     </thead>
     <tbody>
-
-        <tr>
-            <td>
-                <div class="d-flex align-items-center gap-2 title">
-                    <input type="checkbox">
-                    <span>Contenuto 1</span>
-                </div>
-            </td>
-            <td>Tipo 1</td>
-            <td>10</td>
-            <td>
-                <p class="status">
-                    <i class="fa-solid fa-circle-dot"></i> Activa
-                </p>
-            </td>
-            <td>2023-01-01</td>
-            <td>2023-12-31</td>
-            <td>
-                <div class="d-flex justify-content-center gap-3">
-                    <div>
-                        <i class="fa-solid fa-ellipsis"></i>
+        @forelse ($procedures as $procedure)
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center gap-2 title">
+                        <input type="checkbox">
+                        <span>Titulo</span>
                     </div>
-                    <div>
-                        <i class="fa-solid fa-trash"></i>
+                </td>
+                <td>
+                    @if ($procedure->type && $procedure->type->name)
+                        {{ $procedure->type->name }}
+                    @else
+                        Tipo non disponibile
+                    @endif
+                </td>
+                <td>{{ $procedure->employee_dni }}</td>
+                <td>
+                    <p class="status">
+                        <i class="fa-solid fa-circle-dot"></i> {{ $procedure->status }}
+                    </p>
+                </td>
+                <td>{{ $procedure->created_at }}</td>
+                <td>2023-12-31</td>
+                <td>
+                    <div class="d-flex justify-content-center gap-3">
+                        <div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
                     </div>
-                </div>
-            </td>
-        </tr>
-
+                </td>
+            </tr>
+        @empty
+        @endforelse
 
     </tbody>
 </table>
