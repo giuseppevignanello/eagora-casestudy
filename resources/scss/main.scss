@@ -17,6 +17,9 @@
     font-weight: bold;
 }
 
+// #region status
+
+
 .main_table .status {
     padding: 8px;
     border-radius: $border_radius;
@@ -39,4 +42,18 @@
 .in-progress {
     background: $scheduled_light_color;
     color: $scheduled_dark_color;
+}
+
+// #endregion status
+
+.operations {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    background-color: $light_color;
+    box-shadow: 0px 0px 10px 0px;
+    padding: 16px;
+    border-radius: $border_radius;
+    display: none;
+    z-index: 2;
 }
