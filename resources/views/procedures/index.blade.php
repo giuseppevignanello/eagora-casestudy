@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-
-
 @section('content')
-    <div>
-        <h1 class="test"> Prova</h1>
-    </div>
+    @include('partials.header.header')
 @endsection
