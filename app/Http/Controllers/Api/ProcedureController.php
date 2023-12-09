@@ -11,7 +11,21 @@ class ProcedureController extends Controller
 
     public function index(Request $request)
     {
-        $procedures = Procedure::all()->orderByDesc('id');
+        $query = Procedure::query();
+
+        if ($request->has('status')) {
+            $status = $request->input('status');
+            $query->where('status', $status);
+        }
+
+        if ($request->has('type')) {
+            $type = $request->input('type');
+            $query->where('type_id', $type);
+        }
+
+        $query->orderByDesc('id');
+        $procedures = $query->get();
+
 
         return response()->json([
             'success' => true,
