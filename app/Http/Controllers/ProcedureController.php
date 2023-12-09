@@ -44,7 +44,7 @@ class ProcedureController extends Controller
      */
     public function show(Procedure $procedure)
     {
-        //
+        return view('procedures.show', compact('procedure'));
     }
 
     /**

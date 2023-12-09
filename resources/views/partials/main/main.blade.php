@@ -48,7 +48,8 @@
                     </div>
                     <div class="operations">
                         <ul class="list-unstyled">
-                            <li>Ver detalles</li>
+                            <a class="text-decoration-none text-black"
+                                href="{{ route('procedures.show', ['procedure' => $procedure->id]) }}">Ver detalles</a>
                             <li>Copiar enlace web</li>
                             <a class="text-decoration-none text-black"
                                 href="{{ route('procedures.edit', ['procedure' => $procedure->id]) }}">Edit</a>
