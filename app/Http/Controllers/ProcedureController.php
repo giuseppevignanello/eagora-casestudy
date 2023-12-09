@@ -76,6 +76,11 @@ class ProcedureController extends Controller
      */
     public function destroy(Procedure $procedure)
     {
-        //
+
+
+        $procedure->delete();
+
+        $procedures = Procedure::all();
+        return view('procedures.index', compact('procedures'));
     }
 }

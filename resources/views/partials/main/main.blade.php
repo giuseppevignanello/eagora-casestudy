@@ -42,9 +42,12 @@
                         <div class="operation_trigger" onclick="toggleOperations(this)">
                             <i class="fa-solid fa-ellipsis"></i>
                         </div>
-                        <div>
-                            <i class="fa-solid fa-trash"></i>
-                        </div>
+                        <form action="{{ route('procedures.destroy', ['procedure' => $procedure->id]) }}"
+                            method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn"> <i class="fa-solid fa-trash"></i> </button>
+                        </form>
                     </div>
                     <div class="operations">
                         <ul class="list-unstyled">
