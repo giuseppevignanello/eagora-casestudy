@@ -50,7 +50,10 @@
                         <ul class="list-unstyled">
                             <li>Ver detalles</li>
                             <li>Copiar enlace web</li>
-                            <li>Editar</li>
+                            <a class="text-decoration-none text-black"
+                                href="{{ route('procedures.edit', ['procedure' => $procedure->id]) }}">Edit</a>
+
+
                             <li>Marcar como destaco</li>
                             <li>...</li>
                         </ul>

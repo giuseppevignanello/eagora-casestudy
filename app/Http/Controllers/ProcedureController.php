@@ -52,7 +52,8 @@ class ProcedureController extends Controller
      */
     public function edit(Procedure $procedure)
     {
-        //
+        $types = Type::all();
+        return view('procedures.edit', compact('procedure', 'types'));
     }
 
     /**
@@ -65,6 +66,8 @@ class ProcedureController extends Controller
         $valData['type_id'] = $request->input('type_id');
 
         $procedure->update($valData);
+
+        $procedures = Procedure::all();
         return view('procedures.index', compact('procedures'))->with('message', 'Procedure updated Successfully');
     }
 
