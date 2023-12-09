@@ -30,7 +30,6 @@ class ProcedureController extends Controller
      */
     public function store(StoreProcedureRequest $request)
     {
-        var_dump("test");
         $valData = $request->validated();
         $valData['type_id'] = $request->input('type_id');
         Procedure::create($valData);
