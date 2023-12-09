@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Procedure;
 use App\Http\Requests\StoreProcedureRequest;
 use App\Http\Requests\UpdateProcedureRequest;
+use App\Models\Type;
 
 class ProcedureController extends Controller
 {
@@ -22,7 +23,8 @@ class ProcedureController extends Controller
      */
     public function create()
     {
-        return view('procedures.create');
+        $types = Type::all();
+        return view('procedures.create', compact('types'));
     }
 
     /**

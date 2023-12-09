@@ -1,0 +1,6 @@
+.create_form input,
+.create_form select {
+    border: 1px solid $text_muted_color;
+    border-radius: $border_radius;
+    padding: 8px
+}
